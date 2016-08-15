@@ -16,13 +16,16 @@ if [ ! -f "JSON.sh/JSON.sh" ]; then
 	echo "JSON.sh has been downloaded. Proceeding."
 fi
 
-if [ ! -f "token" ]; then
-	clear
-	echo -e '\e[0;31mTOKEN MISSING.\e[0m'
-	echo "PLEASE WRITE YOUR TOKEN HERE"
-	read token
-	echo "$token" >> token
-fi
+source /etc/admin.cfg
+echo "$telegram_key" > token
+
+#if [ ! -f "token" ]; then
+#	clear
+#	echo -e '\e[0;31mTOKEN MISSING.\e[0m'
+#	echo "PLEASE WRITE YOUR TOKEN HERE"
+#	read token
+#	echo "$token" >> token
+#fi
 
 source commands.sh source
 URL='https://api.telegram.org/bot'$TOKEN

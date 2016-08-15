@@ -51,6 +51,9 @@ else
 		'/question')
 			startproc "./question"
 			;;
+                '/sysstat')
+                        startproc "./sysstat"
+                        ;;
 		'/info')
 			send_markdown_message "${CHAT[ID]}" "This is bashbot, the *Telegram* bot written entirely in *bash*."
 			;;
